@@ -15,7 +15,7 @@ public class Main {
 		poker.add("blue");
 		poker.add("yellow");
 		
-		
+		System.out.println( "HELLO" + poker.get(0).compareTo("zapple"));
 		
 		chess.add(1);
 		chess.add(2);

@@ -11,6 +11,7 @@ public class LinkedList_Alphabet {
 		addInOrder(placesToVisit, "Miami");
 		addInOrder(placesToVisit, "NewYork");
 		addInOrder(placesToVisit, "Charleston");
+		addInOrder(placesToVisit, "Charleston");
 		addInOrder(placesToVisit, "Atlanta");
 		addInOrder(placesToVisit, "Los Angeles");
 		addInOrder(placesToVisit, "Atlanta");
