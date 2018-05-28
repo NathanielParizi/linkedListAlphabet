@@ -19,6 +19,8 @@ public class LinkedList_Alphabet {
 		
 		printList(placesToVisit);
 	
+		visit(placesToVisit);
+		
 	}
 
 	private static void printList(LinkedList<String> linkedlist) {
@@ -63,6 +65,7 @@ public class LinkedList_Alphabet {
 	public static void visit(LinkedList cities){
 		Scanner scan = new Scanner(System.in);
 		boolean quit = false;
+		boolean goingForward = true;
 		Iterator<String> listIterator = cities.iterator();
 		if(cities.getFirst()==null){
 			System.out.println("No cities in here buddy!");
@@ -77,12 +80,48 @@ public class LinkedList_Alphabet {
 			
 			switch(action){
 			
-			case 0: System.out.println("Holiday vacation over");
-			break;
+			case 0: 
+				
+				System.out.println("vacation over");
+				break;
+			
 			case 1: 
+				if(!goingForward){
+					if(listIterator.hasNext()){listIterator.next();}
+					goingForward = true;
+				}
+				if(listIterator.hasNext()){
+					System.out.println("Now visiting " + listIterator.next());	
+				}else{ System.out.println("There is nothing infront of it");}
+				break;
+			
+			case 2: 
+				if(goingForward){
+					if(((ListIterator<String>) listIterator).hasPrevious()){
+						((ListIterator<String>) listIterator).previous();
+						goingForward = false;
+					}
+					
+				}
+				if(((ListIterator<String>) listIterator).hasPrevious()){
+					
+					System.out.println(((ListIterator<String>) listIterator).previous());
+					
+				}else{System.out.println("we are at the end of the list");}
+				break;
+			
+			case 3: printMenu();
+			break;
+				
 			
 			}
 		}
+		
+	}
+
+	private static void printMenu() {
+	
+		System.out.println("0 quit\n 1 go next \n 2 go back \n 3 check menu");
 		
 	}
 	
